@@ -15,8 +15,8 @@ var (
 
 type GameService struct {
 	repository Repository
-	// The lock protects the full read/validate/move/save transaction.
-	// sync.Map alone protects individual operations, not their sequence.
+	// Блокировка нужна на весь ход: чтение, проверку и сохранение.
+	// Одной sync.Map для этой последовательности недостаточно.
 	mu sync.Mutex
 }
 
@@ -63,7 +63,7 @@ func (s *GameService) Play(id string, board Board) (Game, error) {
 		return Game{}, err
 	}
 	if !found {
-		// A client may also start by choosing its own UUID and first move.
+		// Первым ходом можно создать игру с UUID из запроса.
 		previous = Game{ID: id}
 	}
 	submitted := Game{ID: id, Board: board}

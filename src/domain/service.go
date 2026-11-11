@@ -1,6 +1,6 @@
 package domain
 
-// Service describes game behavior without mentioning HTTP or storage.
+// Service описывает основные действия с игрой.
 type Service interface {
 	Create() (Game, error)
 	Get(id string) (Game, error)

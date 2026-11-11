@@ -1,7 +1,7 @@
 package domain
 
-// bestMove evaluates every possible continuation with perfect play.
-// When scores are equal, the first free cell in row-major order wins.
+// bestMove выбирает ход компьютера, перебирая возможные продолжения партии.
+// При одинаковой оценке берётся первая свободная клетка.
 func bestMove(board Board) (Board, bool) {
 	bestScore := -100
 	best := board

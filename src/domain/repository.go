@@ -1,6 +1,6 @@
 package domain
 
-// Repository hides the storage implementation from the game rules.
+// Repository задаёт методы для сохранения и получения игры.
 type Repository interface {
 	Save(Game) error
 	Get(id string) (Game, bool, error)

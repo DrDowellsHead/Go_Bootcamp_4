@@ -1,6 +1,6 @@
 package web
 
-// Game is the public JSON contract. Human is 1, computer is 2, empty is 0.
+// Game — формат ответа API: 0 — пустая клетка, 1 — игрок, 2 — компьютер.
 type Game struct {
 	ID     string    `json:"id"`
 	Board  [3][3]int `json:"board"`

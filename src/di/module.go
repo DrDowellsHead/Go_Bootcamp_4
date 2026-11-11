@@ -12,7 +12,7 @@ import (
 	"go.uber.org/fx"
 )
 
-// Module provides exactly one storage instance to all dependent components.
+// Module собирает зависимости; хранилище используется одно на всё приложение.
 var Module = fx.Options(
 	fx.Provide(
 		datasource.NewStorage,

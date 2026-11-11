@@ -5,8 +5,8 @@ import (
 	"errors"
 )
 
-// validateBoardShape prevents JSON's fixed-array decoder from silently
-// padding missing rows or discarding surplus rows.
+// Проверяю размер поля отдельно: при декодировании в массив Go
+// недостающие элементы заполняются нулями, а лишние отбрасываются.
 func validateBoardShape(body []byte) error {
 	var input struct {
 		Board json.RawMessage `json:"board"`

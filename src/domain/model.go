@@ -6,7 +6,7 @@ const (
 	Computer = 2
 )
 
-// Board is a value type: copying it copies all nine cells.
+// Board — поле 3×3. При присваивании все девять клеток копируются.
 type Board [3][3]int
 
 type Game struct {

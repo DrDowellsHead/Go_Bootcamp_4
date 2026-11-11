@@ -2,7 +2,7 @@ package datasource
 
 import "sync"
 
-// Storage owns a thread-safe map shared by every repository.
+// Storage хранит игры в потокобезопасной sync.Map.
 type Storage struct {
 	games sync.Map
 }
