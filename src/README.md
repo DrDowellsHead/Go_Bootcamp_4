@@ -7,12 +7,8 @@ connected locally by `go.work`. Run all commands from `src/`.
 
 Use Go 1.23 or newer.
 
-```sh
-cd src
-go mod download -modfile=di/go.mod
-```
-
-To initialize dependency checksums for each module, use:
+The first run requires internet access to download `go.uber.org/fx`.
+To initialize dependency checksums for the modules that use it:
 
 ```sh
 cd di && go mod tidy && cd ..
